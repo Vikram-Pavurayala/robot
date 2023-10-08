@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Webpage</title>
+    <style>
+    	
+    	@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap');
+    	/*@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap');
+    	@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');*/
+        /* Reset some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+           
+        }
+
+        body {
+           	font-family: 'Teko', sans-serif;
+           	/*font-family: 'Pixelify Sans', cursive;
+			font-family: 'Playfair Display', serif;*/
+			      overflow: hidden;
+            background-color: #f0f0f0;
+        }
+
+        /* Navigation styles */
+        .navbar {
+            background-color: #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            color: #ff5733;
+        }
+
+        .navbar h1 {
+            color: white;
+            font-size: 1.5em;
+            margin-left: 20px;
+        }
+
+        /* Header styles */
+        .header {
+            text-align: center;
+            padding: 100px 0;
+            background-color: #333;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            letter-spacing: 3px;
+        }
+
+        /* Mobile menu styles */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 1);
+            z-index: 1000;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+       }
+
+		
+		.mobile-menu a {
+		    color: white;
+		    text-decoration: none;
+		    font-size: 1.5em;
+		    margin: 15px;
+		    transition: color 0.3s ease;
+		}
+
+		.mobile-menu a:hover {
+		    color: #ff5733;
+		}
+		
+        .menu-button {
+            display: none;
+            position: fixed;
+            top: 15px;
+            right: 15px;
+            cursor: pointer;
+            z-index: 1001;
+            font-size: 1.5em;
+            color: white;
+        }
+
+       
+		
+		.about{
+		  background-color: rgba(255, 255, 255, 0.1);
+		  overflow: auto;
+		  height:65vh;
+		  font-size:30px;
+		  width:50%;
+		  border:3px solid grey;
+		  border-radius: 10px;
+		  margin-top:60px;
+		  margin-left: 40px;
+		  padding:10px;
+		  z-index:1;
+		}
+		b{
+		  color:gold;
+		}
+		.about::-webkit-scrollbar {
+		  width: 0;
+		  height: 1px;
+		  border-bottom: 5px solid grey;
+		}
+		
+		iframe{
+		  position:absolute;
+		  width:100%;
+		  height:75vh;
+		  left:25%;
+		  top:15%;
+		  z-index:0;
+		  
+		}
+    
+        /* Media queries for mobile */
+        @media screen and (max-width: 768px) {
+            .navbar {
+            	
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .navbar h1 {
+                margin-left: 0;
+                margin-bottom: 10px;
+            }
+
+            .navbar a {
+             	display:none;
+            }
+
+            .menu-button {
+                display: block;
+            }
+
+            .mobile-menu {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+
+    <div class="navbar">
+        <h1>Robotics Club</h1>
+        <a href="#">Members</a>
+        <a href="#">Blog</a>
+        <a href="#">Gallery</a>
+        <a href="#">Contact</a>
+        <a href="#">Register</a>
+        <div class="menu-button" onclick="toggleMobileMenu()">&#9776;</div>
+    </div>
+
+  
+
+    <div class="mobile-menu">
+        <a href="#">Members</a>
+        <a href="#">Blog</a>
+        <a href="#">Gallery</a>
+        <a href="#">Contact</a>
+        <a href="#">Register</a>
+    </div>
+
+	 <div class="about">
+Our robotics club has several key goals. First and foremost, we aim to provide hands-on learning experiences for our members. We want them to gain practical skills in robotics, electronics, and programming by working on exciting projects. Creativity and innovation are highly encouraged as we want our members to explore new ideas and develop solutions through robotics.
+
+In addition, we prepare our members for robotics competitions and challenges, emphasizing the importance of teamwork and collaboration. We believe that working together to solve complex problems is a valuable skill. Community engagement is also a priority for our club. We organize workshops and events to share our passion for robotics with others and inspire interest in the field.
+
+Networking and mentorship opportunities are provided to help our members connect with professionals and peers in the technology industry. We also advocate for ethical considerations in technology and provide resources for personal growth and career development.
+
+Diversity and inclusivity are fundamental principles of our club. We welcome individuals from all backgrounds and skill levels, fostering a supportive and inclusive environment. Finally, we explore ways to use robotics for sustainable and environmentally conscious projects, contributing to a better future through technology.
+    </div>
+    
+    
+    <iframe  src="index.html" frameborder="0" scrolling="no" width="100%" height="100%"></iframe>
+
+    <script>
+        
+        setTimeout(() => {
+            document.querySelector('.preloader').style.display = 'none';
+        }, 5000); // You can adjust the delay as needed
+
+        function toggleMobileMenu() {
+            const mobileMenu = document.querySelector('.mobile-menu');
+            mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex';
+        }
+        
+        
+    </script>
+    <script src="main.js"></script>
+</body>
+</html>
